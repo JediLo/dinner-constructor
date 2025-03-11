@@ -11,7 +11,6 @@ public class Main {
 
         dinnerConstructor = new DinnerConstructor();
         scanner = new Scanner(System.in);
-
         while (true) {
             printMenu();
             String command = scanner.next();
@@ -58,6 +57,8 @@ public class Main {
         while (!nextItem.isEmpty()) {
             if (dinnerConstructor.checkDishType(nextItem)) {
                 typesDinner.add(nextItem);
+            } else {
+                System.out.println("Тип блюда " + nextItem + " не найден. Пожалуйста введите другой тип");
             }
             nextItem = scanner.nextLine();
         }
